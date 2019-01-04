@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ajax.js"></script>
+    <script>
+        window.onload = function () {
+            var mBtn = document.getElementById('mBtn');
+            mBtn.onclick = function () {
+                ajax("arr_json.txt", function (str) {
+                        var arr = eval(str);
+                        alert(arr[0].b);
+                    },
+                    function () {
+                        alert("失败")
+                    });
+            };
+        }
+    </script>
+</head>
+<body>
+<input id = "mBtn" type="button" value="读取">
+</body>
+</html>
